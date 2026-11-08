@@ -17,11 +17,13 @@ jobs:
       with:
         python-version: '3.10'
 
-    - name: Kütüphaneleri Yükle
+    - name: FFmpeg ve Kütüphaneleri Yükle
       run: |
+        sudo apt-get update && sudo apt-get install -y ffmpeg
         python -m pip install --upgrade pip
         pip install pyTelegramBotAPI yt-dlp requests pyrogram tgcrypto
 
     - name: Botu Başlat
       run: |
         python main.py
+
