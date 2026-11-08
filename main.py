@@ -18,7 +18,7 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 def handle_link(message):
     url = message.text.strip()
-    if not ("ok.ru" in url or "vk.com" in url or "vk.video" in url):
+    if not ("ok.ru" in url or "vk.com" in url or "m.vk.video " in url or "vk.video" in url):
         bot.reply_to(message, "Lütfen geçerli bir OK.ru veya VK video linki at!")
         return
 
