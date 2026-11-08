@@ -1,0 +1,27 @@
+name: Telegram Botu Çalıştır
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Kodları İndir
+      uses: actions/checkout@v3
+
+    - name: Python Kur
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Kütüphaneleri Yükle
+      run: |
+        pip install --upgrade pip
+        pip install pyTelegramBotAPI yt-dlp requests
+
+    - name: Botu Başlat
+      run: |
+        python main.py
