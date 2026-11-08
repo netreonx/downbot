@@ -20,7 +20,7 @@ jobs:
     - name: Kütüphaneleri Yükle
       run: |
         python -m pip install --upgrade pip
-        pip install pyTelegramBotAPI yt-dlp requests
+        pip install pyTelegramBotAPI yt-dlp requests pyrogram tgcrypto
 
     - name: Botu Başlat
       run: |
